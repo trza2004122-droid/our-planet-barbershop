@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <title>Our Planet Barbershop | احجز موعدك</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Our Planet">
+      <img src="assets/our-planet-logo.jpg" alt="Our Planet Barbershop logo">
+      <span>OUR PLANET <small>BARBERSHOP</small></span>
+    </a>
+    <nav><a href="#services">الخدمات</a><a href="#team">الحلاقين</a><a href="#booking">احجز موعد</a><a href="#contact">تواصل معنا</a></nav>
+    <a class="nav-cta" href="#booking">احجز الآن</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">YOUR STYLE. YOUR PLANET.</p>
+        <h1>أسلوبك يبدأ<br><em>من هنا.</em></h1>
+        <p class="hero-copy">تجربة حلاقة وعناية رجالية تجمع بين الدقة والراحة والاهتمام بالتفاصيل.</p>
+        <div class="hero-actions"><a class="button gold" href="#booking">احجز موعدك</a><a class="text-link" href="#services">اكتشف الخدمات <span>←</span></a></div>
+        <div class="hero-meta"><span><b>4.9</b> ★★★★★ <small>123 مراجعة على Google حسب البيانات المرسلة</small></span><span class="meta-line"></span><span>يوميًا <b>12 ظهرًا – 2 صباحًا</b></span></div>
+      </div>
+      <div class="hero-art" aria-label="Our Planet brand">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-mark"><img src="assets/our-planet-logo.jpg" alt="Our Planet"></div>
+        <span class="art-caption">EST. FOR YOUR STYLE</span>
+      </div>
+    </section>
+
+    <section class="section services-section" id="services">
+      <div class="section-heading"><div><p class="eyebrow">OUR SERVICES</p><h2>اختار خدمتك</h2></div><p>خدمات مقترحة قابلة للتعديل من إدارة المحل قبل النشر الرسمي.</p></div>
+      <div id="service-grid" class="service-grid"></div>
+    </section>
+
+    <section class="team-section" id="team">
+      <div class="section-heading"><div><p class="eyebrow">THE TEAM</p><h2>اختار الحلاق</h2></div><p>أربع خبرات، وموعدك على مزاجك.</p></div>
+      <div class="team-grid" id="barber-grid"></div>
+    </section>
+
+    <section class="booking-section" id="booking">
+      <div class="booking-intro"><p class="eyebrow">BOOK YOUR VISIT</p><h2>موعدك<br><em>على بُعد خطوات.</em></h2><p>اختار الخدمة والحلاق واليوم والوقت المناسب ليك.</p><div class="booking-note">كل الحجوزات بتظهر على جدول واحد لتقليل احتمالية تعارض المواعيد.</div></div>
+      <form class="booking-card" id="booking-form">
+        <div class="form-title"><span>01 / BOOKING</span><h3>احجز موعدك</h3></div>
+        <label>الخدمة<select id="service-select" required></select></label>
+        <label>الحلاق<select id="barber-select" required></select></label>
+        <div class="form-row"><label>التاريخ<input id="booking-date" type="date" required></label><label>الوقت<select id="time-select" required><option value="">اختار التاريخ أولًا</option></select></label></div>
+        <div class="slot-hint" id="slot-hint">اختار الخدمة والحلاق والتاريخ لعرض المواعيد.</div>
+        <div class="form-row"><label>الاسم<input id="customer-name" type="text" placeholder="اسمك بالكامل" required minlength="2"></label><label>رقم الموبايل<input id="customer-phone" type="tel" placeholder="01xxxxxxxxx" required pattern="01[0-9]{9}"></label></div>
+        <label>طريقة الدفع<select id="payment-method"><option value="pay_at_shop">الدفع في المحل</option><option value="online" disabled>الدفع أونلاين — سيتم تفعيله بعد ربط بوابة الدفع</option></select></label>
+        <button class="button gold full" id="submit-booking" type="submit">تأكيد الحجز</button>
+        <p class="form-foot">الحجز الحالي للدفع في المحل. الدفع الإلكتروني غير مفعل حتى يتم ربط بوابة دفع والتحقق منها.</p>
+        <div id="booking-message" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div><p class="eyebrow">FIND YOUR PLANET</p><h2>مستنيين زيارتك.</h2><p>46 شارع محمد فريد، المطار، النزهة، القاهرة.</p></div>
+      <div class="contact-details"><a href="tel:01060775666">010 60775666</a><span>يوميًا من 12 ظهرًا حتى 2 صباحًا</span><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=46+Mohammed+Farid+Al+Matar+El+Nozha+Cairo">افتح الموقع على الخريطة ↗</a></div>
+    </section>
+  </main>
+  <footer><span>© <span id="year"></span> OUR PLANET BARBERSHOP</span><span>CRAFTED FOR YOUR STYLE</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
